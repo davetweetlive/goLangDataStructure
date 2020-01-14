@@ -2,17 +2,16 @@ package main
 
 import (
 	"fmt"
+	"github.com/davetweetlive/goLangDataStructure/stack"
 	// "reflect"
 	// "strconv"
 )
 
-
 // Global variables
 var (
 	mainMenuChoice int
- 	invalidChoice bool
+	invalidChoice  bool
 )
-
 
 func main() {
 	inputMenu()
@@ -22,8 +21,7 @@ func main() {
 		if !invalidChoice {
 			switch mainMenuChoice {
 			case 1:
-				fmt.Println("Stack using array")
-				stackControl()
+				stack.StackMain()
 			case 2:
 				fmt.Println("Queue using array")
 			case 3:
@@ -54,7 +52,6 @@ func main() {
 		inputMenu()
 	}
 }
-
 
 /*
  	The inputMenu function does nothing but provides number based menu and also gets user input ans stores in
