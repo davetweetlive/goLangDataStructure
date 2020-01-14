@@ -6,8 +6,13 @@ import (
 	// "strconv"
 )
 
-var mainMenuChoice int
-var invalidChoice bool
+
+// Global variables
+var (
+	mainMenuChoice int
+ 	invalidChoice bool
+)
+
 
 func main() {
 	inputMenu()
@@ -18,6 +23,7 @@ func main() {
 			switch mainMenuChoice {
 			case 1:
 				fmt.Println("Stack using array")
+				stackControl()
 			case 2:
 				fmt.Println("Queue using array")
 			case 3:
@@ -49,6 +55,12 @@ func main() {
 	}
 }
 
+
+/*
+ 	The inputMenu function does nothing but provides number based menu and also gets user input ans stores in
+	mainMenuChoice variable, if the variable is noninteger variable the sets the invalidChoice as true and exits from
+	the function
+*/
 func inputMenu() {
 	fmt.Println("")
 	fmt.Println("\t\t\t\t\t\t1. Stack using array   \t\t\t 2. Queue using array")
