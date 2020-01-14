@@ -2,39 +2,48 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+	// "reflect"
+	// "strconv"
 )
 
 var mainMenuChoice int
+var invalidChoice bool
 
 func main() {
 	inputMenu()
 
-	for mainMenuChoice != 0  {
-		fmt.Println(reflect.TypeOf(mainMenuChoice))
-		if reflect.TypeOf(mainMenuChoice) == reflect.TypeOf(1) {
-			// switch mainMenuChoice {
-			// case 1:
-			// 	fmt.Println("Single Linked List")
-			// case 2:
-			// 	fmt.Println("Circular Linked List")
-			// case 3:
-			// 	fmt.Println("Double Linked List")
-			// case 4:
-			// 	fmt.Println("Circular Double Linked List")
-			// case 5:
-			// 	fmt.Println("Stacks using Arrays")
-			// case 6:
-			// 	fmt.Println("Queue using Arrays")
-			// case 7:
-			// 	fmt.Println("Dequeue using arrays")
-			// default:
-			// 	fmt.Println("Please select option which is availabe!")
-			// }
-			fmt.Println("The value is int")
+	for mainMenuChoice != 0 {
+
+		if !invalidChoice {
+			switch mainMenuChoice {
+			case 1:
+				fmt.Println("Stack using array")
+			case 2:
+				fmt.Println("Queue using array")
+			case 3:
+				fmt.Println("Dequeue using array")
+			case 4:
+				fmt.Println("Priority queue using array")
+			case 5:
+				fmt.Println("Single linked list")
+			case 6:
+				fmt.Println("Circular linked list")
+			case 7:
+				fmt.Println("Double linked list")
+			case 8:
+				fmt.Println("Circular double linked list")
+			case 9:
+				fmt.Println("Tree")
+			case 10:
+				fmt.Println("Graph")
+			default:
+				fmt.Println("Please select option which is availabe!")
+			}
 
 		} else {
-			fmt.Println("That's a wrong input, you need to pick a number from the menu!")
+			fmt.Println("Well, that's not an integer value!")
+			fmt.Println("Please re-run the program again!")
+			return
 		}
 		inputMenu()
 	}
@@ -42,9 +51,17 @@ func main() {
 
 func inputMenu() {
 	fmt.Println("")
-	fmt.Println("\t\t\t\t\t\t1. Single Linked List \t\t\t 2. Circular Linked List")
-	fmt.Println("\t\t\t\t\t\t3. Double Linked List \t\t\t 4. Circular Double Linked List")
-	fmt.Println("\t\t\t\t\t\t6. Stack using arrays \t\t\t 6. Queue using arrays")
+	fmt.Println("\t\t\t\t\t\t1. Stack using array   \t\t\t 2. Queue using array")
+	fmt.Println("\t\t\t\t\t\t3. Dequeue using array \t\t\t 4. Priority queue using array")
+	fmt.Println("\t\t\t\t\t\t5. Single linked list  \t\t\t 6. Circular linked list")
+	fmt.Println("\t\t\t\t\t\t7. Double linked list  \t\t\t 8. Circular double linked list")
+	fmt.Println("\t\t\t\t\t\t9. Tree                \t\t\t 10. Graph")
+	fmt.Println("\t\t\t\t\t\t0. Exit from the menu")
 	fmt.Println("\t\t\t\t\t\t________________________________________________________________________")
-	fmt.Scanf("%d", &mainMenuChoice)
+	_, err := fmt.Scanf("%d", &mainMenuChoice)
+
+	if err != nil {
+		invalidChoice = true
+		return
+	}
 }
