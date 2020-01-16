@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/davetweetlive/goLangDataStructure/stack"
 	// "reflect"
 	// "strconv"
 )
@@ -23,7 +24,7 @@ func main() {
 			switch mainMenuChoice {
 			case 1:
 				fmt.Println("Stack using array")
-				stackControl()
+				stack.StackControl()
 			case 2:
 				fmt.Println("Queue using array")
 			case 3:
