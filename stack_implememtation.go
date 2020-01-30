@@ -38,11 +38,10 @@ func (s *Stack) Pop() *Node {
 	return s.nodes[s.count]
 }
 
-
-func main(){
-    fmt.Println("Stack Implementations")
+func main() {
+	fmt.Println("Stack Implementations")
 	s := NewStack()
-    fmt.Printf("format of stack: %T\n",s)
+	fmt.Printf("format of stack: %T\n", s)
 	s.Push(&Node{1})
 	s.Push(&Node{2})
 	s.Push(&Node{3})
