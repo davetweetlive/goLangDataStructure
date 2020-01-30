@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/davetweetlive/goLangDataStructure/stack"
-	// "reflect"
-	// "strconv"
+	"github.com/goLangDataStructure/stack"
 )
 
 // Global variables
@@ -21,7 +19,8 @@ func main() {
 		if !invalidChoice {
 			switch mainMenuChoice {
 			case 1:
-				stack.StackMain()
+				fmt.Println("Stack using array")
+				stack.StackControl()
 			case 2:
 				fmt.Println("Queue using array")
 			case 3:
