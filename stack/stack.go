@@ -69,15 +69,21 @@ func StackMain() {
 
 				fmt.Println("Stack has been succesfully created, please enter value!")
 			case 2:
-				fmt.Println("Push Value !")
-				newStack.Push(&Node{1})
+				fmt.Println("Enter a number\t")
+				var num int
+				_, err := fmt.Scanf("%d", &num)
+				if err != nil {
+					fmt.Println("Can't take user input", err)
+				}
+				newStack.Push(&Node{num})
 			case 3:
-				fmt.Println("Pop Value!")
+				val := newStack.Pop()
+				fmt.Println("Popped Value is:", val)
 			case 4:
 				fmt.Println("Length ")
 			case 5:
 				fmt.Println("Display!")
-				fmt.Println(*(&newStack))
+				fmt.Println((*newStack).nodes)
 			default:
 				fmt.Println("Invalid choice!")
 			}

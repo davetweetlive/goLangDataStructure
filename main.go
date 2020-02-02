@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/davetweetlive/goLangDataStructure/queue"
 	"github.com/davetweetlive/goLangDataStructure/stack"
 )
 
@@ -59,6 +60,7 @@ func main() {
 				stack.StackMain()
 			case 2:
 				fmt.Println("Queue using array")
+				queue.QueueMain()
 			case 3:
 				fmt.Println("Dequeue using array")
 			case 4:
