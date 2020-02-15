@@ -47,12 +47,12 @@ func (s *Stack) Push(n *Node) {
 }
 
 // Pop removes and returns a node from the stack in last to first order.
-func (s *Stack) Pop() *Node {
+func (s *Stack) Pop() {
 	if s.count == 0 {
-		return nil
+		fmt.Println("Error")
 	}
 	s.count--
-	return s.nodes[s.count]
+	s.nodes = append(s.nodes[:0], s.nodes[0:s.count]...)
 }
 
 // type newStack *Stack
